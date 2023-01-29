@@ -84,7 +84,6 @@ class ProductPageFunctions {
         Geocode.fromAddress(address).then(
             (response) => {
                 const { lat, lng } = response.results[0].geometry.location;
-                console.log(lat, lng);
                 setLat(lat)
                 setLng(lng)
             },
@@ -93,23 +92,6 @@ class ProductPageFunctions {
             }
         );
     }
-
-    // async deleteProduct(productId:number) {
-    //     const navigate = useNavigate()
-    //     try {
-    //         const results = await apiService.deleteProductById(productId);
-    //         console.log(results);
-    //         if(results.affectedRows===1){
-    //             productPageFunctions.ToastDeletedProduct()
-    //             navigate('/')
-    //         }
-    //     } catch (e) {
-    //         console.log(e);
-    //     }
-    // }
-
-
-
 }
 
 export const productPageFunctions = new ProductPageFunctions();

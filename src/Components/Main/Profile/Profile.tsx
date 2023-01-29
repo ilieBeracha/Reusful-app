@@ -24,7 +24,6 @@ function Profile(): JSX.Element {
     }, []);
 
     async function getFile() {
-        console.log(userImage);
         const formData = new FormData();
         formData.append('userImage', userImage)
         await apiService.addImageUser(formData, id)

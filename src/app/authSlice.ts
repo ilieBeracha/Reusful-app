@@ -16,7 +16,6 @@ const authSlice = createSlice({
         login: (state, action: PayloadAction<string>) => {
             const { username, sub } = jwtDecode<{ username: string, sub: number }>(action.payload);
             state = {username, sub};
-            console.log(state)
             window.localStorage.setItem('token', action.payload);
             return state;
         },

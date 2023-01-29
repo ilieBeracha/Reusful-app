@@ -26,7 +26,8 @@ function Main(): JSX.Element {
             dispatch(logout())
             navigate('/')
         }
-    }, [])
+    }, []);
+    
     return (
         <div className="Main">
             <Routes>

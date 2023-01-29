@@ -5,7 +5,6 @@ class AddProductFunctions{
      async getAllCategories(setCategories:any) {
         const categories = await apiService.getAllCategories();
         setCategories(categories);
-        console.log(categories);
     }
 
     ToastAddedProduct() {

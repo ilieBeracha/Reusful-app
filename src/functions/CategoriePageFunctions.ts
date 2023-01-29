@@ -13,8 +13,6 @@ class CategoriePageFunctions {
     async filterProductsByPrice(e: any, params: any, setProducts: any) {
         const value = Number(e.target.value);
         const allProducts = await apiService.getProductsByCategorieId(Number(params.id))
-        console.log(allProducts);
-
         if (value === 0) {
             this.getProductsFromDb(setProducts, params);
             return;
@@ -29,9 +27,7 @@ class CategoriePageFunctions {
     }
 
     async searchForProduct(e: any,params:any,products:any,setProducts:any) {
-        const value = e.target.value;
-        console.log(value);
-        
+        const value = e.target.value;        
         if (value === '') {
             apiService.getProductsByCategorieId(Number(params.id)).then((res) => setProducts(res))
         }

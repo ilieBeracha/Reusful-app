@@ -35,14 +35,10 @@ function ProductPage(): JSX.Element {
         apiService.getProduct(Number(id)).then((p: any) => {
             setProduct(p)
             productPageFunctions.checkIfProductInCart(userId, productId, setInCart)
-            console.log(product);
             apiService.getUserById(p.userId).then((res) => {
                 const country = res.country
                 const city = res.city
                 const streetAddress = res.streetAddress
-                console.log(res);
-
-                console.log(country, city, streetAddress);
                 productPageFunctions.getlanAndLat(`${country},${city},${streetAddress}`, setLat, setLng)
             });
 
@@ -52,7 +48,6 @@ function ProductPage(): JSX.Element {
     async function deleteProduct() {
         try {
             const results = await apiService.deleteProductById(product, productId);
-            console.log(results);
             if (results.affectedRows === 1) {
                 productPageFunctions.ToastDeletedProduct()
                 navigate('/')

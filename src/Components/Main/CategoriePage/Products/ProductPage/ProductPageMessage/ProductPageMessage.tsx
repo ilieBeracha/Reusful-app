@@ -10,6 +10,7 @@ import { useForm } from "react-hook-form";
 import { MessagesInterface } from "../../../../../../model/MessagesModel";
 import { apiService } from "../../../../../../service/ApiService";
 import { toast } from "react-toastify";
+import { productPageMessagesFunctions } from "../../../../../../functions/productPageMessagesFunctions";
 
 const style = {
     position: 'absolute',
@@ -23,31 +24,6 @@ const style = {
     p: 4,
 };
 
-function ToastMessageSent() {
-    return toast.success("Message Sent", {
-        position: "top-right",
-        pauseOnHover: true,
-        draggable: false,
-        progress: undefined,
-    });
-}
-function ToastMessageEmptyString() {
-    return toast.info("Write Message", {
-        position: "top-right",
-        pauseOnHover: true,
-        draggable: false,
-        progress: undefined,
-    });
-}
-function ToastMessageError() {
-    return toast.error("Error occured", {
-        position: "top-right",
-        pauseOnHover: true,
-        draggable: false,
-        progress: undefined,
-    });
-}
-
 export default function ProductPageMessage({ product }: { product: ProductInterface }) {
     const authSlice = useSelector((state: any) => state.auth);
     const [open, setOpen] = React.useState(false);
@@ -57,7 +33,7 @@ export default function ProductPageMessage({ product }: { product: ProductInterf
 
     async function sendMessage(message: any) {
         if (message.message === '') {
-            ToastMessageEmptyString()
+            productPageMessagesFunctions.ToastMessageEmptyString()
             return;
         } else {
             setOpen(false)
@@ -68,11 +44,10 @@ export default function ProductPageMessage({ product }: { product: ProductInterf
                 time: new Date().getTime()
             }
             try {
-                const response = await apiService.sendMessage(messageObj)
-                ToastMessageSent()
-                console.log(response);
+                await apiService.sendMessage(messageObj)
+                productPageMessagesFunctions.ToastMessageSent()
             } catch (e) {
-                ToastMessageError()
+                productPageMessagesFunctions.ToastMessageError()
             }
         }
     }
@@ -93,7 +68,6 @@ export default function ProductPageMessage({ product }: { product: ProductInterf
                     <Typography id="modal-modal-title" variant="h6" component="h2">
                         Message {product.username}
                     </Typography>
-                    {/* <Typography id="modal-modal-description" sx={{ mt: 2 }}> */}
                     <div className="ProductPageMessageContent">
                         <form onSubmit={handleSubmit(sendMessage)} action="">
 
@@ -101,7 +75,6 @@ export default function ProductPageMessage({ product }: { product: ProductInterf
                             <button>Send</button>
                         </form>
                     </div>
-                    {/* </Typography> */}
                 </Box>
             </Modal>
         </div>

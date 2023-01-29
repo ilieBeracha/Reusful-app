@@ -48,15 +48,10 @@ function AddProduct(): JSX.Element {
             const productSQLres = await apiService.AddProduct(formData);
             const productId = productSQLres.insertId
 
-            console.log(productId);
             const formDataFiles = new FormData();
             formDataFiles.append('productImage', productImage1)
             formDataFiles.append('productImage', productImage2)
-            // formDataFiles.append('productImage', productImage3)
-            // formDataFiles.append('productImage', productImage4)
-            // formDataFiles.append('productImage', productImage5)
-
-
+            
             await apiService.addProductImages(formDataFiles, productId)
             addProductFunctions.ToastAddedProduct();
             navigate('/')

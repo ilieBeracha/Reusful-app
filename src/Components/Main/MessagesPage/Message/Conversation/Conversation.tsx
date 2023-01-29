@@ -28,17 +28,13 @@ function Conversation(): JSX.Element {
             message: message.message,
             time: new Date().getTime()
         }
-        console.log(messageObj);
-
 
         try {
-            const response = await apiService.sendMessage(messageObj)
-            console.log(response);
+            await apiService.sendMessage(messageObj)
             setRefreshMessages(!refreshMessages)
 
         } catch (e) {
             console.log(e);
-
         }
 
 
