@@ -1,7 +1,3 @@
-.ProductPageMessage {
-	
-}
-
 .ProductPageMessageContent{
     display: flex;
     flex-direction: column;
@@ -29,8 +25,4 @@
     background-color: var(--color4);
     border: none;
     height: 30px;
-}
-
-.ProductPageMessageContent button{
-    
 }

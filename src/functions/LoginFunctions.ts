@@ -11,7 +11,14 @@ class LoginFunctions{
         })
     }
 
-
+    ToastLoginError(){
+        toast.error('Username or password incorrect',{
+            position: "top-right",
+            pauseOnHover: true,
+            draggable: false,
+            progress: undefined,
+        })
+    }
 }
 
 export const loginFunctions = new LoginFunctions();

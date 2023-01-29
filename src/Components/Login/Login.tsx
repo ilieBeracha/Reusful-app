@@ -20,7 +20,7 @@ function Login(): JSX.Element {
             loginFunctions.ToastLogin()
             navigate('/')
         } else{
-            alert('problem')
+            loginFunctions.ToastLoginError()
         }
     }
 
