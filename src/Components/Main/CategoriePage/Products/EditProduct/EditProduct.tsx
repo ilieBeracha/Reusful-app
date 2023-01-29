@@ -77,12 +77,7 @@ function EditProduct({ product, refreshProduct, setRefreshProduct }: { product: 
                                 <option value="Used">Used</option>
                                 <option value="Old">Old</option>
                             </select>
-                            {/* <label htmlFor="">Product main image: </label>
-                                <input onChange={(e: any) => setSelectedFile(e.target.files[0])} required type="file" />
-                                <label htmlFor="">Product Imagess: </label>
-                                <input onChange={(e: any) => setProductImage1(e.target.files[0])} required type="file" />
-                                <input onChange={(e: any) => setProductImage2(e.target.files[0])} required type="file" /> */}
-
+        
                             <label htmlFor="">Categorie: </label>
                             <select defaultValue={product?.categorieId} required id="" {...register('categorieId')}>
                                 {categories.map((cate: CategoriesInterface) => (

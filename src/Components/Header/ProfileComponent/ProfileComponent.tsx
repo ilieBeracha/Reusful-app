@@ -6,14 +6,12 @@ import MenuItem from '@mui/material/MenuItem';
 import ListItemIcon from '@mui/material/ListItemIcon';
 import Divider from '@mui/material/Divider';
 import IconButton from '@mui/material/IconButton';
-import Typography from '@mui/material/Typography';
 import Tooltip from '@mui/material/Tooltip';
 import './ProfileComponent.css'
 import { NavLink, useNavigate } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { logout } from '../../../app/authSlice';
 import { useEffect, useState } from 'react';
-import { Settings } from '@mui/icons-material';
 import LogoutIcon from '@mui/icons-material/Logout';
 import PersonIcon from '@mui/icons-material/Person';
 import { profileComponentFunctions } from '../../../functions/ProfileComponentFunctions';
@@ -109,17 +107,6 @@ export default function ProfileComponent() {
                     </NavLink>
                 </div>
                 <Divider />
-                <div className='ProfileButton'>
-
-                    <NavLink to={'/settings'}>
-                        <MenuItem>
-                            <ListItemIcon>
-                                <Settings />
-                            </ListItemIcon>
-                            Settings
-                        </MenuItem>
-                    </NavLink>
-                </div>
                 <div className='ProfileButton'>
 
                     <NavLink to={'/messages'}>

@@ -10,8 +10,9 @@ function Conversation(): JSX.Element {
     const [messages, setMessages] = useState<MessagesInterface[]>([])
     const [refreshMessages, setRefreshMessages] = useState<boolean>(false)
     const authSlice = useSelector((state: any) => state.auth);
+    const { register, handleSubmit } = useForm()
     const id = useParams();
-    const { register, handleSubmit, resetField } = useForm()
+    
     const otherUserId = id.id
 
     useEffect(() => {
@@ -36,9 +37,8 @@ function Conversation(): JSX.Element {
         } catch (e) {
             console.log(e);
         }
-
-
     }
+
     return (
         <div className="Conversation">
             <div className="ConversationMessages">

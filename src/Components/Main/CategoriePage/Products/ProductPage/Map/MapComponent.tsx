@@ -2,7 +2,6 @@ import "./MapComponent.css";
 import { MapContainer, Marker, Popup, TileLayer, useMap } from 'react-leaflet'
 import 'leaflet/dist/leaflet.css';
 import L from 'leaflet';
-import MapIcon from '@mui/icons-material/Map';
 
 const iconPerson = new L.Icon({
     iconUrl: require('../../../../../../images/marker.png'),

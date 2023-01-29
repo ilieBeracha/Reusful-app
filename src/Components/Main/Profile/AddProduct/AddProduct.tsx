@@ -2,7 +2,6 @@ import { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
 import { useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
-import { toast } from "react-toastify";
 import { addProductFunctions } from "../../../../functions/addProductFunctions";
 import { CategoriesInterface } from "../../../../model/CategorieInterface";
 import { ProductInterface } from "../../../../model/productModel";
@@ -10,18 +9,14 @@ import { apiService } from "../../../../service/ApiService";
 import "./AddProduct.css";
 
 function AddProduct(): JSX.Element {
-    const { register, handleSubmit } = useForm<ProductInterface>();
-    const [categories, setCategories] = useState<[]>([]);
     const authSlice = useSelector((state: any) => state.auth)
+    const [categories, setCategories] = useState<[]>([]);
     const [selectedFile, setSelectedFile] = useState<any>();
-    const navigate = useNavigate();
     const [isSubmitting, setIsSubmitting] = useState(false);
     const [productImage1, setProductImage1] = useState<any>();
     const [productImage2, setProductImage2] = useState<any>();
-    // const [productImage3, setProductImage3] = useState<any>();
-    // const [productImage4, setProductImage4] = useState<any>();
-    // const [productImage5, setProductImage5] = useState<any>();
-
+    const { register, handleSubmit } = useForm<ProductInterface>();
+    const navigate = useNavigate();
 
     async function firstStep(Product: ProductInterface) {
         setIsSubmitting(true);
@@ -51,7 +46,7 @@ function AddProduct(): JSX.Element {
             const formDataFiles = new FormData();
             formDataFiles.append('productImage', productImage1)
             formDataFiles.append('productImage', productImage2)
-            
+
             await apiService.addProductImages(formDataFiles, productId)
             addProductFunctions.ToastAddedProduct();
             navigate('/')
@@ -61,16 +56,9 @@ function AddProduct(): JSX.Element {
         }
     };
 
-
-
-
-
-
-
     useEffect(() => {
         addProductFunctions.getAllCategories(setCategories)
     }, [])
-
 
     return (
         <div className="AddProduct">

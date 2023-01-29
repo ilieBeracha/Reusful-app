@@ -31,12 +31,10 @@ function ProductPage(): JSX.Element {
 
     useEffect(() => {
         try {
-
             apiService.getProductImages(Number(id)).then(res => setProductImages1(res[0]));
             apiService.getProductImages(Number(id)).then(res => setProductImages2(res[1]));
         } catch (e) {
             console.log(e);
-
         }
         apiService.getProduct(Number(id)).then((p: any) => {
             setProduct(p)
@@ -47,7 +45,6 @@ function ProductPage(): JSX.Element {
                 const streetAddress = res.streetAddress
                 productPageFunctions.getlanAndLat(`${country},${city},${streetAddress}`, setLat, setLng)
             });
-
         })
     }, [refreshProduct]);
 
@@ -87,9 +84,7 @@ function ProductPage(): JSX.Element {
                     <b>Description: </b> <br /> <br />
                     <span>{product?.productDescription}</span>
                 </div>
-
             </div>
-
 
             <div className="ProductPageSecondaryInfo">
                 <div onClick={() => setShowMap(!showMap)} className="ProductPageShowMap">

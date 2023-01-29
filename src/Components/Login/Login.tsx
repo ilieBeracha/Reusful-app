@@ -6,7 +6,6 @@ import { useDispatch } from "react-redux";
 import { login } from "../../app/authSlice";
 import { useNavigate } from "react-router-dom";
 import market from '../../images/market.png'
-import { toast } from "react-toastify";
 import { loginFunctions } from "../../functions/LoginFunctions";
 
 function Login(): JSX.Element {

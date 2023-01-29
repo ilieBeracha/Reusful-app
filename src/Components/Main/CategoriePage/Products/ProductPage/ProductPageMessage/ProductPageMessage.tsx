@@ -9,7 +9,6 @@ import { useSelector } from "react-redux";
 import { useForm } from "react-hook-form";
 import { MessagesInterface } from "../../../../../../model/MessagesModel";
 import { apiService } from "../../../../../../service/ApiService";
-import { toast } from "react-toastify";
 import { productPageMessagesFunctions } from "../../../../../../functions/productPageMessagesFunctions";
 
 const style = {
@@ -58,7 +57,6 @@ export default function ProductPageMessage({ product }: { product: ProductInterf
                 <span>Message {product?.username}</span>
             </Button>
             <Modal
-
                 open={open}
                 onClose={handleClose}
                 aria-labelledby="modal-modal-title"
@@ -70,7 +68,6 @@ export default function ProductPageMessage({ product }: { product: ProductInterf
                     </Typography>
                     <div className="ProductPageMessageContent">
                         <form onSubmit={handleSubmit(sendMessage)} action="">
-
                             <textarea defaultValue={`Hey ${product.username}, Id like to get more information about your ${product.productName}, Thank you!`} placeholder="Message" {...register('message')} />
                             <button>Send</button>
                         </form>

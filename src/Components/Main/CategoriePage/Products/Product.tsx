@@ -5,7 +5,6 @@ import { NavLink } from "react-router-dom";
 function Product({ product }: { product: ProductInterface }): JSX.Element {
     return (
         <div className="ProductAll">
-
             <NavLink to={'/productpage/' + product.id}>
                 <div className="Product">
                     <div className="ProductImage">

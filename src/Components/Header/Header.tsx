@@ -1,4 +1,4 @@
-import { NavLink, useNavigate } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import "./Header.css";
 import logoBlue from '../../images/logoBlue.png'
 import { useSelector } from "react-redux";

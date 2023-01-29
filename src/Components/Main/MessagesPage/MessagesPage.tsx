@@ -7,12 +7,12 @@ import "./MessagesPage.css";
 
 function MessagesPage(): JSX.Element {
     const [chat, setChat] = useState<ChatInterface[]>([]);
-    const authSlice = useSelector((state: any) => state.auth)
+    const authSlice = useSelector((state: any) => state.auth);
+    
     useEffect(() => {
         apiService.getChatById(+authSlice.sub).then((res) => {
             setChat(res)
         })
-
     }, [])
 
     return (
