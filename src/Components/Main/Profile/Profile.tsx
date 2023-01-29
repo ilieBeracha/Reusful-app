@@ -12,7 +12,7 @@ import { profileFunctions } from "../../../functions/ProfileFunctions";
 function Profile(): JSX.Element {
     const authSlice = useSelector((state: any) => state.auth);
     const [products, setProducts] = useState<ProductInterface[]>([]);
-    const [isCart, setIsCart] = useState<boolean>(false);
+    const [isCart, setIsCart] = useState<boolean>(true);
     const [user, setUser] = useState<UserInterface>();
     const [userImage, setUserImage] = useState('');
     const { handleSubmit } = useForm();
@@ -58,7 +58,7 @@ function Profile(): JSX.Element {
                 </div>
             </div>
             <div className="ProfileProductsChoose">
-                <button onClick={() => profileFunctions.getCartProducts(isCart, setIsCart, id, setProducts)}>{isCart ? 'Click to show Cart' : 'Click to show own listed products'}</button>
+            <button onClick={() => profileFunctions.getCartProducts(isCart, setIsCart, id, setProducts)}>{isCart ? 'Click to show Cart' : 'Click to show own listed products'}</button>
                 <div className="ProfileProducts">
                     {
                         products.map((p: ProductInterface) => <Product key={p.id} product={p} />)

@@ -11,12 +11,12 @@ import Tooltip from '@mui/material/Tooltip';
 import './ProfileComponent.css'
 import { NavLink, useNavigate } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
-import { logout } from '../../app/authSlice';
+import { logout } from '../../../app/authSlice';
 import { useEffect, useState } from 'react';
 import { Settings } from '@mui/icons-material';
 import LogoutIcon from '@mui/icons-material/Logout';
 import PersonIcon from '@mui/icons-material/Person';
-import { profileComponentFunctions } from '../../functions/ProfileComponentFunctions';
+import { profileComponentFunctions } from '../../../functions/ProfileComponentFunctions';
 import MessageIcon from '@mui/icons-material/Message';
 
 export default function ProfileComponent() {
@@ -50,7 +50,7 @@ export default function ProfileComponent() {
     return (
         <React.Fragment>
             <Box sx={{ display: 'flex', alignItems: 'center', textAlign: 'center' }}>
-                <Typography sx={{ minWidth: 100 }}>Contact</Typography>
+                <Typography sx={{ minWidth: 100 }}>Contact Us</Typography>
                 <Tooltip title="Account settings">
                     <IconButton
                         onClick={handleClick}
@@ -99,18 +99,18 @@ export default function ProfileComponent() {
                 transformOrigin={{ horizontal: 'right', vertical: 'top' }}
                 anchorOrigin={{ horizontal: 'right', vertical: 'bottom' }}
             >
-                <div className='ProfileButton'>
+                <div className='ProfileButtonProfile'>
                     <NavLink to={'/profile'}>
                         <MenuItem>
                             <ListItemIcon>
                                 <PersonIcon fontSize='large' />
                             </ListItemIcon>
-
+                            
                         </MenuItem>
                     </NavLink>
                 </div>
                 <Divider />
-                {/* <div className='ProfileButton'> */}
+                <div className='ProfileButton'>
 
                     <NavLink to={'/settings'}>
                         <MenuItem>
@@ -120,7 +120,7 @@ export default function ProfileComponent() {
                             Settings
                         </MenuItem>
                     </NavLink>
-                {/* </div> */}
+                </div>
                 <div className='ProfileButton'>
 
                     <NavLink to={'/messages'}>
