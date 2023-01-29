@@ -30,8 +30,14 @@ function ProductPage(): JSX.Element {
     const [showMap, setShowMap] = useState<boolean>(false)
 
     useEffect(() => {
-        apiService.getProductImages(Number(id)).then(res => setProductImages1(res[0]));
-        apiService.getProductImages(Number(id)).then(res => setProductImages2(res[1]));
+        try {
+
+            apiService.getProductImages(Number(id)).then(res => setProductImages1(res[0]));
+            apiService.getProductImages(Number(id)).then(res => setProductImages2(res[1]));
+        } catch (e) {
+            console.log(e);
+
+        }
         apiService.getProduct(Number(id)).then((p: any) => {
             setProduct(p)
             productPageFunctions.checkIfProductInCart(userId, productId, setInCart)

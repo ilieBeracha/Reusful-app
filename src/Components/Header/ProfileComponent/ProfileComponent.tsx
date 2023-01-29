@@ -50,7 +50,6 @@ export default function ProfileComponent() {
     return (
         <React.Fragment>
             <Box sx={{ display: 'flex', alignItems: 'center', textAlign: 'center' }}>
-                <Typography sx={{ minWidth: 100 }}>Contact Us</Typography>
                 <Tooltip title="Account settings">
                     <IconButton
                         onClick={handleClick}

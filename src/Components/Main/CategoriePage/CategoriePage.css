@@ -1,14 +1,14 @@
 .CategoriePage {
-	width: 100%;
+    width: 100%;
     height: 100%;
     display: flex;
 }
 
-.CategoriePageContent{
+.CategoriePageContent {
     width: 80%;
 }
 
-.CategoriePageFilters{
+.CategoriePageFilters {
     box-sizing: border-box;
     /* padding: 20px; */
     padding-left: 25px;
@@ -19,7 +19,7 @@
     background-color: white;
 }
 
-.CategoriePageSearch{
+.CategoriePageSearch {
     width: 100%;
     height: 10%;
     display: flex;
@@ -29,7 +29,7 @@
     margin-bottom: 20px;
 }
 
-.CategoriePage .CategoriePageSearch input{
+.CategoriePage .CategoriePageSearch input {
     width: 70%;
     height: 40px;
     border: none;
@@ -37,14 +37,14 @@
     font-size: 18px;
 }
 
-.CategoriePage .CategoriePageSearch input::placeholder{
+.CategoriePage .CategoriePageSearch input::placeholder {
     /* text-align: center; */
     padding-left: 10px;
     font-size: 18px;
     /* color: var(--color3); */
 }
 
-.CategoriePageProducts{
+.CategoriePageProducts {
     height: 87%;
     gap: 50px;
     display: flex;
@@ -73,7 +73,7 @@
 }
 
 
-.FiltersPriceRange{
+.FiltersPriceRange {
     background-color: var(--color1);
     /* height: 200px; */
     padding: 10px;
@@ -82,11 +82,32 @@
     flex-direction: column;
 }
 
-.FiltersPriceRangeSpan{
+.FiltersPriceRangeSpan {
     width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
+@media screen and (max-width: 768px) {
 
+    .CategoriePage{
+        display: flex;
+        /* height: 100%; */
+    }
+
+    .CategoriePageContent{
+        width: 100%;
+    }
+
+    .CategoriePageFilters{
+        width: 100%;
+        padding-bottom: 0px;
+        display: none;
+        
+    }
+
+    .CategoriePageProducts{
+        height: 75%;
+    }
+}

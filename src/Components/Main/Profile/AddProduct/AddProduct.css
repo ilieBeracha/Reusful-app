@@ -11,7 +11,7 @@
     border-radius: 10px;
     box-shadow: 2px 2px 10px #ccc;
     width: 30%;
-    height: 90%;
+    height: max-content;
 }
 
 .AddProductForm label {
@@ -193,13 +193,64 @@
     }
 }
 
+@media screen and (max-width: 1000px) {
+    .AddProduct{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .AddProductForm{
+        width: 60%;
 
+    }
+}
+
+/* @media screen and (max-width: 840px) {
+    .AddProduct{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .AddProductForm{
+        width: 60%;
+    }
+} */
 
 @media screen and (max-width: 768px) {
+    .AddProduct{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
     .AddProductForm {
         width: 80%;
         height: max-content;
         padding: 15px;
+        
+        /* overflow-y: scroll; */
+    }
+
+    .AddProductForm form{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        /* align-items: center; */
+    }
+
+    .AddProductForm textarea {
+        height: 30px;
+    }
+/* 
+    .AddProductForm input{
+        height: 15px;
+        margin: 0;
+    } */
+    .AddProductForm input[type="text"], .AddProductForm select, .AddProductForm input[type="number"], .AddProductForm input[type="file"]{
+        margin: 3px;
+    }
+
+    .AddProductForm >*{
+        font-size: 12px;
     }
 
 

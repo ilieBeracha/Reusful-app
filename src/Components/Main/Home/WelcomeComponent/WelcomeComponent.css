@@ -1,5 +1,5 @@
 .WelcomeComponent {
-	width: 85%;
+    width: 85%;
     height: 100%;
     background-color: var(--color1);
     display: flex;
@@ -13,7 +13,7 @@
     /* background-repeat: no-repeat; */
 }
 
-.WelcomeComponent h2{
+.WelcomeComponent h2 {
     font-size: 30px;
     font-weight: 100;
     margin: 0;
@@ -27,12 +27,12 @@
     height: 100%;
 }
 
-.WelcomeComponentImage img{
+.WelcomeComponentImage img {
     width: 80%;
 }
 
 
-.WelcomeComponentSen{
+.WelcomeComponentSen {
     display: flex;
     flex-direction: column;
     justify-content: space-around;
@@ -41,12 +41,12 @@
     height: 20%;
 }
 
-#WelcomeComponentSenCatchPhrase{
+#WelcomeComponentSenCatchPhrase {
     font-size: 22px;
     color: var(--color4);
 }
 
-.WelcomeComponentSenWords{
+.WelcomeComponentSenWords {
     width: 80%;
     display: flex;
     flex-direction: column;
@@ -64,17 +64,33 @@
     cursor: pointer;
 }
 
+@media screen and (max-width: 800px) {
+    .WelcomeComponentImage img{
+        width: 60%;
+    }
+}
+
 
 @media screen and (max-width: 768px) {
-    .WelcomeComponentSen{
+    .WelcomeComponent {
+        display: flex;
+        flex-direction: column;
+        box-sizing: border-box;
+        padding-top: 30px;
+    }
+
+    .WelcomeComponentSen {
+        /* display: none; */
+        width: 100%;
+        height: 50%;
+    }
+
+    .WelcomeComponentImage {
+        width: 60%;
         display: none;
     }
 
-    .WelcomeComponentImage{
-        width: 100%;
-    }
-
-    .WelcomeComponentImage img{
+    .WelcomeComponentImage img {
         width: 100%;
     }
 }

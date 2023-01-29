@@ -1,4 +1,4 @@
-.ProductAll a{
+.ProductAll a {
     text-decoration: none;
     color: black;
 }
@@ -30,7 +30,7 @@
     align-items: center;
 }
 
-.ProductImage img{
+.ProductImage img {
     width: 100%;
 }
 
@@ -53,7 +53,17 @@
     font-weight: bold;
 }
 
-.Product:hover{
+.Product:hover {
     position: relative;
     bottom: 5px;
+}
+
+
+@media screen and (max-width: 768px) {
+    .Product{
+        width: 150px;
+        height: 200px;
+    }
+
+    
 }

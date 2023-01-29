@@ -26,6 +26,8 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    box-sizing: border-box;
+    padding-right: 20px;
 }
 
 .HeaderLogged button{
